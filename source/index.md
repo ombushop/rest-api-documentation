@@ -44,17 +44,35 @@ curl "https://secure.ombushop.com/api/products?secret=abcdef1234567890"
 [
   {
     "id": 120,
-    "name": "Zapatillas",
-    "description": "<p>Zapatillas de ultima moda</p>",
+    "name": "Botas Leñador",
+    "description": "Confeccionadas en gamuza",
     "created_at": "2015-06-25 14:43:51 -0300",
     "updated_at": "2015-07-03 17:17:40 -0300",
-    "permalink": "zapatillas",
+    "permalink": "botas-lenador",
     "deleted_at": null,
     "meta_description": "Descripción",
     "meta_keywords": "Palabras clave",
     "count_on_hand": 10,
     "seller_id": 24,
-    "currency": "ARS"
+    "currency": "ARS",
+    "images": [
+      {
+        "id": 15877,
+        "viewable_id": 120,
+        "viewable_type": "Product",
+        "attachment_content_type": "image/jpg",
+        "attachment_file_name": "0.jpg",
+        "position": 1,
+        "attachment_width": 836,
+        "attachment_height": 494,
+        "image_paths": [
+          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/mini/0.jpg",
+          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/small/0.jpg",
+          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/product/0.jpg",
+          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/original/0.jpg"
+        ]
+      }
+    ]
   },
   {
     "id": 121,
@@ -73,9 +91,9 @@ curl "https://secure.ombushop.com/api/products?secret=abcdef1234567890"
 ]
 ```
 
-Obtener un JSON con todos los productos.
+Obtener un JSON con todos los productos y sus imágenes.
 
-### Atributos
+### Atributos de producto
 
 Atributo | Descripción
 --------- | -----------
@@ -91,6 +109,21 @@ meta_keywords | Palabras clave que pueden ayudar en la búsqueda del producto
 count_on_hand | Cantidad de unidades disponibles del producto
 seller_id | Identificador del vendedor del producto
 currency | Moneda utilizada por la tienda
+images | Imágenes del producto
+
+### Atributos de imagen
+
+Atributo | Descripción
+--------- | -----------
+id | Identificador de la imagen
+viewable_id | Identificador del producto/variante al que pertenece la imagen
+viewable_type | Puede ser "Producto" o "Variante"
+attachment_content_type | Tipo de archivo de imagen (jpg, png, gif, etc.)
+attachment_file_name | Nombre de archivo de la imagen
+position | Posición de la imagen según su importancia, siendo 1 la posición más importante
+attachment_width | Ancho de la imagen en píxeles
+attachment_height | Altura de la imagen en píxeles
+image_paths | URLs de las distintas versiones de la imagen, ordenadas por tamaño
 
 ### Pedido HTTP
 
@@ -156,7 +189,7 @@ curl "https://secure.ombushop.com/api/taxons?secret=abcdef1234567890"
 
 Obtener un JSON con todas las categorías.
 
-### Atributos
+### Atributos de categoría
 
 Atributo | Descripción
 --------- | -----------
