@@ -65,12 +65,12 @@ curl "https://secure.ombushop.com/api/products?secret=abcdef1234567890"
         "position": 1,
         "attachment_width": 836,
         "attachment_height": 494,
-        "image_paths": [
-          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/mini/0.jpg",
-          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/small/0.jpg",
-          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/product/0.jpg",
-          "http://s3.amazonaws.com/ombu_store_production/images/products/15877/original/0.jpg"
-        ]
+        "urls": {
+          "mini": "http://s3.amazonaws.com/ombu_store_production/images/products/15877/mini/0.jpg",
+          "small": "http://s3.amazonaws.com/ombu_store_production/images/products/15877/small/0.jpg",
+          "product": "http://s3.amazonaws.com/ombu_store_production/images/products/15877/product/0.jpg",
+          "original": "http://s3.amazonaws.com/ombu_store_production/images/products/15877/original/0.jpg"
+        }
       }
     ]
   },
