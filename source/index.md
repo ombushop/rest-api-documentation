@@ -72,6 +72,19 @@ curl "https://secure.ombushop.com/api/products?secret=abcdef1234567890"
           "original": "http://s3.amazonaws.com/ombu_store_production/images/products/15877/original/0.jpg"
         }
       }
+    ],
+    "variants": [
+      {
+        "id": 437,
+        "product_id": 120,
+        "sku": "PROD001",
+        "price": "2050.0",
+        "is_master": true,
+        "count_on_hand": 10,
+        "created_at": "2015-06-25T14:43:51-03:00",
+        "updated_at": "2015-07-03T17:17:25-03:00",
+        "wholesale_price": "1550.0"
+      }
     ]
   },
   {
@@ -86,7 +99,20 @@ curl "https://secure.ombushop.com/api/products?secret=abcdef1234567890"
     "meta_keywords": "Palabras clave",
     "count_on_hand": 20,
     "seller_id": 24,
-    "currency": "ARS"
+    "currency": "ARS",
+    "variants": [
+      {
+        "id": 438,
+        "product_id": 121,
+        "sku": "PROD002",
+        "price": "500.0",
+        "is_master": true,
+        "count_on_hand": 20,
+        "created_at": "2015-06-25T14:43:51-03:00",
+        "updated_at": "2015-07-03T17:17:25-03:00",
+        "wholesale_price": "400.0"
+      }
+    ]
   }
 ]
 ```
@@ -117,13 +143,27 @@ Atributo | Descripción
 --------- | -----------
 id | Identificador de la imagen
 viewable_id | Identificador del producto/variante al que pertenece la imagen
-viewable_type | Puede ser "Producto" o "Variante"
+viewable_type | Puede ser "Product" o "Variant"
 attachment_content_type | Tipo de archivo de imagen (jpg, png, gif, etc.)
 attachment_file_name | Nombre de archivo de la imagen
 position | Posición de la imagen según su importancia, siendo 1 la posición más importante
 attachment_width | Ancho de la imagen en píxeles
 attachment_height | Altura de la imagen en píxeles
 image_paths | URLs de las distintas versiones de la imagen, ordenadas por tamaño
+
+### Atributos de variante
+
+Atributo | Descripción
+--------- | ----------
+id | Identificador de la variante
+product_id | Identificador del producto al que pertenece la variante
+sku | Identificador ingresado por el administrador de la tienda para identificar al producto/variante (Stock-keeping unit)
+price | Precio de la variante que se muestra al público
+is_master | Al crear un producto, se crea tambien una variante que contiene algunos datos del producto. Este valor indica con un valor booleano si esta variante es la que se creo con el producto.
+count_on_hand | Cantidad de unidades disponibles de la variante
+created_at | Fecha de creación de la variante
+updated_at | Fecha de ultima actualización de la variante
+wholesale_price | Precio de la variante que se muestra a los usuarios mayoristas
 
 ### Pedido HTTP
 
